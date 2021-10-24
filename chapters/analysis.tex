@@ -3,8 +3,24 @@
 \chapter{Analytická časť}
 
 \section{Vue}
-Vue je progresívny frontendovy framework pre vytváranie použivateľských rozhraní (https://vuejs.org/v2/guide/). Pre účely tohto projektu sme zvolili Vue, keďže je najjednoduchší na naučenie (v porovnaní s Reactom a Angularom). Štruktúra Vue kódu je veľmi podobná s klasickou HTML, CSS a Javascript syntaxou. Doplnená o pár direktív Vue. Napríklad template tagy pre HTML časť. Vue taktiež na rozdiel od napríklad Reactu dovoľuje písať scooped CSS, nie je potrebná implementácia externých knižníc ako napríklad Styled Components, aby sme sa vyhli prepísavaniu CSS štýlov.
+Vue je progresívny frontendovy framework pre vytváranie použivateľských rozhraní (https://vuejs.org/v2/guide/). Zvolili sme ho pre účely tohto projektu, keďže je najjednoduchší na naučenie (v porovnaní s Reactom a Angularom). Štruktúra Vue kódu je veľmi podobná s klasickou HTML, CSS a Javascript syntaxou. Doplnená o pár direktív Vue (napríklad template tagy pre HTML časť).
 
+Vue je v dnešnej dobe tretí najpopulárnejší framework z pomedzi 5 najväčších frontend frameworkov. 
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=.9\textwidth]{figures/frameworks.png}
+  \caption{\LaTeX{} Vývoj popularity frameworkov v priebehu rokov \label{o:Vývoj popularity frameworkov v priebehu rokov}}
+\end{figure}
+https://gist.github.com/tkrotoff/b1caa4c3a185629299ec234d2314e190
+
+Ak porovnáme tri najpoužívanejšie frameworky (React, Anuglar a Vue), tak si môžeme všimnúť rozdielne filozofiee, ktoré boli použité pri ich vytváraní. 
+
+Angular si môžeme predstaviť ako veľkú dielňu. Nemusíme si zháňať ďalšie nástroje, pretože všetko čo potrebujeme sa v nej už nachádza. Naopak React by sme prirovnali ku kladivu. Jeho účelom je jediná vec a to je zrenderovať (vykresliť) UI. 
+
+Vue je niečo medzi Angularom a Reactom. Aby sme zostali pri už použitej metafore tak Vue by bol pracovný kufrík, v ktorom máme uložené najviac podstatné nástroje, pre väčšinu projektov a ak potrebujeme nejaký viac špecifický nástroj, tak si ho môžeme do toho kufra pridať.
+
+Okrem najprehľadnejšej syntaxi z pomedzi spomenutých frameworkov Vue taktiež rieši napríklad problém globálneho CSS z Reactu. Ktorý by sme pri väčšom projekte v Reacte museli riešiť napríklad pomcou BEM alebo Styled Components. Vue to rieši pomocou scooped CSS.
 
 \subsection{Nuxt}
 Nuxt je open source framework postavený na Vue. Nuxt sa nám snaží uľahčiť bežné problémy na ktoré narazíme pri vývoji appiek vo Vue. Jednou z nich je napríklad Automatický Router. Ak by sme chceli spravovať podstránky v klasickom Vue, museli by sme nastaviť súbor vue-router. Nuxt to rieši za nás a tento súbor generuje automaticky z jeho súborovej štruktúry. 
