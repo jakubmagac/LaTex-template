@@ -5,22 +5,30 @@
 \addcontentsline{toc}{chapter}{Úvod}
 
 \chapter*{Úvod}
+Webstránky. Pár rokov dozadu jednoduché textové dokumenty slúžiace pre výmenu informácii prostredníctvom internetu, v dnešnej dobe komplexné aplikácie schopné konkurovať aj aplikáicam určených pre desktop.
 
-Od prvej stránky, ktorá uzrelo svetlo sveta už ubehlo presne 30 rokov. Bola vytvorená CERNom a je na nej popísaný projekt World Wide Web a ako ho používať. Na počiatku webu bolo obyčajný HTML dokument. Malo ísť o jazyk, ktorým bude možné štruktúrovať text a zdieľať informácie pomocou internetu.
+Za 30 rokov vývoja sme prešli viacerými metódami pre vytváranie webový aplikácii. Od jedoduchých HTML a CSS súborov, jQuery, po dnešné veľké Javascriptové frameworky ako React, Angular alebo Vue.
 
-Za 30 rokov však vývoj webu pokročil a to čo boli kedysi jednoduché dokumenty s inofrmáciami, sú dnes pokročilé aplikácie, ktoré dokážu interagovať s používateľom a meniť svoj obsah na základe jeho správania sa na stránke.
+Keďže dnešné aplikácie typu Facebook alebo Spotify môžu dosahovať obrovské rozmery, musíme pri nich preto aplikovať spôsoby aby sme ich spravili efektívnejšie pre používateľov a zaistili čo najrýchlejšiu odozvu. 
 
-Vytváranie takýchto aplikácie by bolo veľmi komplikované použitím čistého HTML, CSS a Javascriptu. Developeri sa snažili kedysi tento problém riešiť použitím knižníc ako napríklad jQuery ale ani to nestačilo pre veľké aplikácie typu Facebook alebo Google.
+As page load time goes from one second to 10 seconds, the probability of a mobile site visitor bouncing increases 123%
+(https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks-load-time-vs-bounce/)
 
-Dnešné aplikácie sú preto vyvýjané pomocou frameworkov ako napríklad Angular, React, Vue, a pod. 
+Bounce rate označuje percento návštevníkov, ktorý navštívili stránku a hneď následne ju opustili. (Tzn. nepreklikli sa na žiadnu ďalšiu podstránku).
 
-Táto práca sa bude venovať práci s frameworkom Vue. 
+Takýto Bounce rate následne aj ovplyvňuje SEO stránky. Čím nižší rate ma stránka, tým nižšie ju vyhľadávač zaradzuje vo svojích výsledkoch.
+\footnote{\url{https://www.websitebuilderexpert.com/building-websites/website-load-time-statistics/}}.
+
+Táto práca má skúmať aspekty, ktoré dokážu ovplyvniť rýchlosť aplikácie. 
+
+Porovnáme, ktoré su najpodstatnejšie, a ktoré budú mať najmenší vplyv.
 % \footnote{\url{https://moodle.fei.tuke.sk/pluginfile.php/27971/mod_resource/content/16/Instructions_v15.pdf}}.
 
 
 \section*{Formulácia úlohy}
 
-Cieľom práce je zostaviť frontend aplikácie pre firmu US Steel. Aplikácia by mala slúžiť ako simulátor nastavení linky teplej valcovne. Aplikácia je vyvýjaná pod záštitou firmy Digital League, na jej backende pobeží machine learning model, ktorý na základe dát, ktoré zhromaždila US Steel vythodnotí najvhodnejšie nastavenie linky pre dané parametre a následne odsimuluje priebeh práce na danej linke. Príprava Machine Learning modelu však nie je súčasť tejto práce.
+Prvým cieľom teoretickej časti práce je popísať metódy, ktorými vieme najviac ovplyvniť rýchlosť aplikácie. Pozrieme sa na metódy ako Code-splitting, CDNs, Load balancing a podobne.
 
-V tejto práci sa budeme venovať frontendu tejto aplikácie. Pozrieme sa na good practices pri vývoji Vue aplikácie. Porovnáme rôzne metódy písania komponentov, dizajnové patterny a pozrieme sa na aspekty, ktoré dokážu najviac zamávať s performence frameworku Vue. 
+Druhým cieľom teoretickej časti je tieto metódy porovnať, a zistiť ktoré z nich budú mať najväčší vplyv pre rýchlosť aplikácie.
 
+Praktická časť tejto práce je zostaviť frontend aplikácie pre firmu US Steel. Aplikácia by mala slúžiť ako simulátor nastavení linky teplej valcovne. Aplikácia je vyvýjaná pod záštitou firmy Digital League, na jej backende pobeží machine learning model, ktorý na základe dát, ktoré zhromaždila US Steel vythodnotí najvhodnejšie nastavenie linky pre dané parametre a následne odsimuluje priebeh práce na danej linke. Príprava Machine Learning modelu však nie je súčasť tejto práce. V tejto práci sa budeme venovať frontendu aplikácie. Aplikácia bude implementovan v jednom z najpoužívajnejších frontendových frameworkov - Vue. Konkrétne použijeme nadstavbu Vue s názvom Nuxt.

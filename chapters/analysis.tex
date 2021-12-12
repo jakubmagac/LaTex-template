@@ -26,3 +26,10 @@ Okrem najprehľadnejšej syntaxi z pomedzi spomenutých frameworkov Vue taktiež
 Nuxt je open source framework postavený na Vue. Nuxt sa nám snaží uľahčiť bežné problémy na ktoré narazíme pri vývoji appiek vo Vue. Jednou z nich je napríklad Automatický Router. Ak by sme chceli spravovať podstránky v klasickom Vue, museli by sme nastaviť súbor vue-router. Nuxt to rieši za nás a tento súbor generuje automaticky z jeho súborovej štruktúry. 
 
 Základná inštalácia Nuxt projetku nám taktiež umožňuje pridať do projektu závislosti a vygeneruje nám súborovú štruktúru. Typesript pre statické typovanie, výber package manageru, UI knižnicu (Vuetify), Nuxt moduly (Axios, PWA, Content - git based headless CMS), Linting tool, Testing framework (Jest, Ava, WebdriverIO, Nightwatch), SSR/ SPA, Deployment Target (Server/ Static), Development tools,
+
+\section{Critical Render Path}
+Aby sme vedeli ako optimalizovať aplikáciu pre frontend. Bude nejlepšie ak sa najprv pozrieme na to akým spôsobom zobrazuje prehliadač dáta.
+
+Critical Render Path je postup krokov ktoré, prehliadač vykonáva cez skompilovanie kódu po vykreslenie kontentu na obrazovke. 
+
+Keď uvažujeme klient server model arhitektúru, môžme si CRP predstaviť následovným spôsobom. Client pošle request na server, a server mu pošle odpovedajúci súbor index.html. Prehliadač začne vytvárať Document object model, ktorý popisuje štruktúru stránky. Ako náhle sa v skripte objaví zmienka o CSS, prehliadač si ho vyžiada od servera. V momente keď dôjde CSS ku klientovi, prehliadač začne generovať CSS Object Model. Keď prehliadač uvidí v skripte scrip tag s Javscriptom, vypýta si JS od servera. Javascript na frontende začne modifikovať DOM. Po skompilovaní prehliadač vygeneruje render tree, čo je kompinácia DOM a CSSOM. Z neho prehliadač vydedukuje layout, pochopí kde má namaľov  ať content. Jedna z veci ktoré sme nespomenuli sú obrázky. Obrázky sa sťahujú špeciálnym spôsobom. Sú doťahované autmaticky čo na nich browser narazí pri čítaní index.html a sú sťahované na pozadí. Zobrazia sa na stránke hneď čo sú stiahnuté u klienta.
