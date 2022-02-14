@@ -5,30 +5,24 @@
 \addcontentsline{toc}{chapter}{Úvod}
 
 \chapter*{Úvod}
-Webstránky. Pár rokov dozadu jednoduché textové dokumenty slúžiace pre výmenu informácii prostredníctvom internetu, v dnešnej dobe komplexné aplikácie schopné konkurovať aj aplikáicam určených pre desktop.
+Strojové učenie je oblasť umelej inteligencie a informatiky, ktorá sa sústredí na spracovanie dát a využitie učiacich sa algoritmov.
 
-Za 30 rokov vývoja sme prešli viacerými metódami pre vytváranie webový aplikácii. Od jedoduchých HTML a CSS súborov, jQuery, po dnešné veľké Javascriptové frameworky ako React, Angular alebo Vue.
+Strojové učenie má veľa využití v priemysle. Od samoriadiacích aut, cez rozpoznanie hlasu pre Google asistenta, po návrhy tovaru, ktorý by sa vám mohol páčiť na Amazone.
 
-Keďže dnešné aplikácie typu Facebook alebo Spotify môžu dosahovať obrovské rozmery, musíme pri nich preto aplikovať spôsoby aby sme ich spravili efektívnejšie pre používateľov a zaistili čo najrýchlejšiu odozvu. 
+Pomocou Strojového učenia vieme odhadovať výstupy, na základe poskytnutých dát. 
 
-As page load time goes from one second to 10 seconds, the probability of a mobile site visitor bouncing increases 123%
-(https://www.thinkwithgoogle.com/marketing-strategies/app-and-mobile/mobile-page-speed-new-industry-benchmarks-load-time-vs-bounce/)
-
-Bounce rate označuje percento návštevníkov, ktorý navštívili stránku a hneď následne ju opustili. (Tzn. nepreklikli sa na žiadnu ďalšiu podstránku).
-
-Takýto Bounce rate následne aj ovplyvňuje SEO stránky. Čím nižší rate ma stránka, tým nižšie ju vyhľadávač zaradzuje vo svojích výsledkoch.
-\footnote{\url{https://www.websitebuilderexpert.com/building-websites/website-load-time-statistics/}}.
-
-Táto práca má skúmať aspekty, ktoré dokážu ovplyvniť rýchlosť aplikácie. 
-
-Porovnáme, ktoré su najpodstatnejšie, a ktoré budú mať najmenší vplyv.
-% \footnote{\url{https://moodle.fei.tuke.sk/pluginfile.php/27971/mod_resource/content/16/Instructions_v15.pdf}}.
+Jednou z najjednoduchších metód použitia strojového učenia je linárna regresia. Pomocou lineárnej regresie vieme vypočítať linérne rastúce výstupy z vstupov. Príkladom môže byť cena auta, pizze alebo v našom prípade cena nehnuteľnosti, ktorej predikcii sa budeme venovať v tejto práci.
 
 
 \section*{Formulácia úlohy}
+Hlavnou náplňou tejto práce bude vytvoriť softvér pre predikciu cien nehnuteľností. Táto úloha sa bude skladať z viacero podúloh.
 
-Prvým cieľom teoretickej časti práce je popísať metódy, ktorými vieme najviac ovplyvniť rýchlosť aplikácie. Pozrieme sa na metódy ako Code-splitting, CDNs, Load balancing a podobne.
+1. Vytvoriť nástroj na tvorbu datasetu na odhad trhovej ceny nehnutelnosti. Vytvoríme web scrapper, ktorý nám zozbiera dáta z weboovej stránky predávajúcej nehnuteľnosti a uloží ich do CSV formátu s ktorým bude pracovať náš model. Dáta následne prečistíme, vyselektovaním dát, ktoré ovplyvňujú celkovú cenu nehnuteľnosti, doplníme chýbajúce dáta a celkovo ich predspracujeme.
 
-Druhým cieľom teoretickej časti je tieto metódy porovnať, a zistiť ktoré z nich budú mať najväčší vplyv pre rýchlosť aplikácie.
+2. Analyzovať a znázorniť vlastnosti získaných dátových vzoriek. Pomocou knižnice pandas vytvoríme k získaným dátam grafy, pre lepšiu vizualizáciu súvislostí dát a výslednej ceny.
 
-Praktická časť tejto práce je zostaviť frontend aplikácie pre firmu US Steel. Aplikácia by mala slúžiť ako simulátor nastavení linky teplej valcovne. Aplikácia je vyvýjaná pod záštitou firmy Digital League, na jej backende pobeží machine learning model, ktorý na základe dát, ktoré zhromaždila US Steel vythodnotí najvhodnejšie nastavenie linky pre dané parametre a následne odsimuluje priebeh práce na danej linke. Príprava Machine Learning modelu však nie je súčasť tejto práce. V tejto práci sa budeme venovať frontendu aplikácie. Aplikácia bude implementovan v jednom z najpoužívajnejších frontendových frameworkov - Vue. Konkrétne použijeme nadstavbu Vue s názvom Nuxt.
+3. Implementovať softvérové riešeni využívajúce strojové učenie na odhad trhovej ceny nehnuteľnosti. Pôjde konkrétne riešenie modelu strojové učenia. Vyskúšame viacero algoritmov a parametrov a porovnaním nájdeme najvhodnejšie riešenie nášho problému.
+
+4. Vhodnými metódami analyzujte presnosť vytvoreného riešenia. 
+
+5. V rámci zadania vypracujte používateľskú a sýstémovú príručku. Používateľská príručka bude obsahovať pokyny a možnosti súšťania skriptu s modelom strojovho učnia. Systémová príručka bude určena programátorom a bude obsahovať zoznam použitých funkcií a algoritmov pre prípad, ak by sa nejaký programátor rozhodol pokračovať v ďalšom vývoji. Táto príručka bude slúžiť ako dokumentácia projektu. 
