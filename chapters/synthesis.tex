@@ -1,11 +1,18 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Syntetická časť}
+\chapter{Implementácia modelu}
 
 
-\section{Zber dát - tvorba datasetu}
+\section{Zber dát}
 \subsection{Beautiful Soup}
-\subsection{Python script}
+Skrpity pre vytváranie datasetov sme riešili pomocou knižnice Beautiful Soup [6]. Knižnicu sme vybrali z dôvodu,aby sme nemuseli používať viacero programovacích jazykov. A keďže už riešime implementáciu modelov v Pythone, tak sme zvolili práve túto knižnicu. Knižnica slúži na vyťahovanie dát z HTML a XML súborov.
+
+\subsection{Tvorba datasetov}
+Pre tvorbu datasetov sme sa rozhodli použiť slovenský portál s realitami www.topreality.sk. Rozhodli sme sa vytvoriť viacero typov datasetov. Datasety sú delené na datasety pre domy a datasety pre byty. A následne sú ešte delené na predaj alebo prenájom nehnuteľností.
+
+
+\subsection{Scripty}
+Prvým scriptom pri tvorbe datasetov je script get-links. Tento script slúži na uloženie všetkých podstránok zo stránky topreality, potrebných pre datasety. Tento script rozdelí linky do štyroch súborov: predaj-byty.csv, prenajom-byty.csv, predaj-domy.csv a prenajom-domy.csv.
 
 \section{Vizualizácia dát}
 \subsection{Matplotlib}
