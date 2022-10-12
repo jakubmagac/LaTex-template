@@ -1,15 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% KPI Thesis Class.
-%%
-%% Class for writing bachelor/master/phd thesis at Computer Science department
-%% at Faculty of Electrical Engineering and Informatics and Technical University
-%% of Košice.
-%%
-%% department homepage: http://kpi.fei.tuke.sk
-%% project homepage: https://git.kpi.fei.tuke.sk/tuke/thesis.in.latex
-%%
-%%%%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{kithesis}[2021/09/29 KPI Thesis Class, v2021.3]
 
@@ -84,7 +72,7 @@
    bookmarksopen,
    pdfhighlight={/P},
    colorlinks=false, % TODO draft vs publish ready?
-   %hidelinks, % disable color links completly
+   hidelinks, % disable color links completly
    citecolor=magenta,
    baseurl={https://kpi.fei.tuke.sk/}
 ]{hyperref}
@@ -92,10 +80,10 @@
 % PDF metadata based on macro values
 \AtBeginDocument{
   \hypersetup{
-    pdftitle = {\@title@en},
-    pdfauthor = {\@author},
-    pdfkeywords = {\@keywords@en},
-    pdfsubject = {\@thesis}
+    pdftitle = {Title},
+    pdfauthor = {Autor},
+    pdfkeywords = {Keywords},
+    pdfsubject = {Subject}
   }
 }
 
@@ -379,13 +367,6 @@
         \renewcommand{\appendixlistname}{List of Appendixes}
     }
     \addto\captionsslovak{
-        \renewcommand{\@title}{\@title@sk}
-        \renewcommand{\@abstract}{\@abstract@sk}
-        \renewcommand{\@keywords}{\@keywords@sk}
-        \renewcommand{\@college}{\@college@sk}
-        \renewcommand{\@department}{\@department@sk}
-        \renewcommand{\@departmentacr}{\@departmentacr@sk}
-        \renewcommand{\@faculty}{\@faculty@sk}
         \renewcommand{\@thesis}{\@thesis@sk}
         \renewcommand{\@declaration}{\@declaration@sk}
         \renewcommand{\declarationname}{Čestné vyhlásenie}
@@ -431,14 +412,6 @@
     \pagenumbering{roman}
     \pagestyle{empty}  % no page numbers until TOC
     \frontpage
-    \titlepage
-    \abstractpage
-
-    % thesis detail specification
-    \@thesisspec
-
-    \declarationpage
-    \acknowledgmentpage
 
     \pagestyle{plain}
     \tableofcontents
@@ -469,164 +442,25 @@
 \newcommand{\frontpage}{
 
     \begin{center}
-        {\Large \textbf{\@college}}
-
-        {\Large \textbf{\@faculty}}
+        {\Large \textbf{Poznamky}}
 
         \vfill
 
-        {\LARGE \textbf{\@title} \par}
+        {\LARGE \textbf{title} \par}
 
         \bigskip
 
-        {\large \textbf{\@thesis}}
+        {\large \textbf{podnadpis}}
     \end{center}
 
     \vfill
 
     \begin{center}
-        {\Large \textbf{\@submissionyear}} \hfill {\Large \textbf{\@author@prefix~\@author@firstname~\@author@lastname~\@author@postfix}}
+        {\Large \textbf{rok}} \hfill {\Large \textbf{Moje meno}}
     \end{center}
 
     \newpage
 }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Abstract component
-%%
-%%%%%
-
-\newcommand{\abstractpage}{
-    \def\br{}
-
-    \noindent
-    \subsection*{\abstractname}
-
-    \@abstract
-    
-    \subsection*{\keywordsname}
-
-    \@keywords
-
-    \iflanguage{slovak}{
-        \subsection*{\secondabstractname}
-
-        \begin{otherlanguage}{english}
-            \@abstract
-        \end{otherlanguage}
-        
-        \subsection*{\secondkeywordsname}
-
-        \begin{otherlanguage}{english}
-            \@keywords
-        \end{otherlanguage}
-    }{
-        \subsection*{\secondabstractname}
-
-        \begin{otherlanguage}{slovak}
-            \@abstract
-        \end{otherlanguage}
-        
-        \subsection*{\secondkeywordsname}
-
-        \begin{otherlanguage}{slovak}
-            \@keywords
-        \end{otherlanguage}
-    }
-
-    \vfill
-
-    \subsection*{\bibcitationname}
-
-    \MakeUppercase\@author@lastname, \@author@firstname. {\itshape \@title}. \@college@city: \@college, \@faculty, \@submissionyear. \pageref{theend}s. \supervisorcitationname: \@supervisor
-
-    \newpage
-
-    \def\br{\\}
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Declaration component
-%%
-%%%%%
-\newcommand\declarationpage{
-    \vglue0pt
-    \vfill
-    \subsection*{\declarationname}
-
-    \noindent\@declaration
-
-    \bigskip
-
-    \noindent \@college@city,~\@submissionday.\@submissionmonth.\@submissionyear \hfill
-    \begin{tabular}[t]{c}
-        \hbox to 50mm {\dotfill} \\ \textit{\small \signaturename}
-    \end{tabular}
-    \newpage
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Declaration component
-%%
-%%%%%
-\newcommand\acknowledgmentpage{%
-    \vglue0pt\vfill%
-
-    \subsection*{\acknowledgementname}%
-
-    \@acknowledgment
-
-    \newpage
-}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
-%% Title page component
-%%
-%%%%%
-\renewcommand{\titlepage}{
-    \begin{center}
-        {\Large \textbf{\@college}}
-
-        {\Large \textbf{\@faculty}}
-
-        \vfill
-
-        {\LARGE \textbf{\@title} \par}
-
-        \bigskip
-
-        {\large \textbf{\@thesis}}
-    \end{center}
-
-    \vfill
-
-    \noindent
-    \begin{tabular}{@{}p{.26\textwidth}p{.7\textwidth}}
-        \studyprogrammename:& \@studyprogramme \\
-        \fieldofstudyname:& \@fieldofstudy \\
-        \departmentname:& \@department~(\@departmentacr) \\
-        \supervisorname:& \@supervisor \\
-        \consultantname:& \@consultant \\
-    \end{tabular}
-
-    \vspace{2\baselineskip}
-
-    \begin{center}
-        \centering
-        {\Large \textbf{\@college@city{} \@submissionyear}} \hfill {\Large \textbf{\@author@prefix~\@author@firstname~\@author@lastname~\@author@postfix}}
-    \end{center}
-
-    \newpage
-}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -654,8 +488,3 @@
 
 \linespread{1.3}
 \setlength{\parindent}{1.5em}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newcommand{\blindtext}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobortis facilisissem. Nullam nec mi et neque pharetra sollicitudin. Praesent imperdiet mi necante. Donec ullamcorper, felis non sodales commodo, lectus velit ultrices augue, a dignissim nibh lectus placerat pede. Vivamus nunc nunc, molestie ut, ultriciesvel, semper in, velit. Ut porttitor. Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis fringilla tristique neque. Sed interdum libero utmetus. Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit ametante lobortis sollicitudin. Praesent blandit blandit mauris. Praesent lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris lacinia lorem sit amet ipsum. Nunc quis urna dictum turpis accumsan semper.}
